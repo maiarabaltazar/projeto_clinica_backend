@@ -80,6 +80,11 @@ class DbContext {
         return $this->executar_query_sql($query);
     }
 
+    public function minhas_consultas($id_paciente) {
+        $query = "SELECT consultas_marcadas.id, consultas_marcadas.dataehora, pacientes.nome, especialidades.nome as especialidade FROM consultas_marcadas, pacientes, especialidades WHERE consultas_marcadas.id_pacientes = pacientes.id AND pacientes.id = " . $id_paciente . " AND consultas_marcadas.id_especialidades = especialidades.id";
+        return $this->executar_query_sql($query);
+    }
+
     public function atualizar($id, $nome, $matricula) {
         $query = "UPDATE alunos SET nome = '"
         . $this->conexao->real_escape_string($nome) . "', matricula = ". "'"
@@ -94,5 +99,6 @@ class DbContext {
     }
 
 }
+
 
 ?>

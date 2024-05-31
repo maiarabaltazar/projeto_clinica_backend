@@ -11,6 +11,6 @@ $db_context = new DbContext();
 //inicia a conexão com o banco de dados
 $db_context->conectar();
 
-$resultado = $db_context->consultar_especialidades();
+$resultado = $db_context->minhas_consultas($_GET['id_pacientes']);
 echo $resultado;
 
