@@ -85,24 +85,13 @@ class DbContext {
         return $this->executar_query_sql($query);
     }
 
-    // public function buscar_consulta($id_paciente) {
-    //     $query = "SELECT consultas_marcadas.id FROM consultas_marcadas WHERE consultas_marcadas.id_pacientes = $id_paciente;";
-    //     return $this->executar_query_sql($query);
-    // }
-
+    
     public function desmarcar_consulta($id) {
         $query = "DELETE FROM consultas_marcadas WHERE consultas_marcadas.id = " .$id;
         return $this->executar_query_sql($query);
     }
 
-    // public function atualizar($id, $nome, $matricula) {
-    //     $query = "UPDATE alunos SET nome = '"
-    //     . $this->conexao->real_escape_string($nome) . "', matricula = ". "'"
-    //     . $this->conexao->real_escape_string($matricula) . "'" . "WHERE id = " .$id;
-
-    //     return $this->executar_query_sql($query);
-    // }
-
+   
 
 
 }
